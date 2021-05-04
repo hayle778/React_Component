@@ -1,47 +1,43 @@
 
 
-import React,  {Component} from 'react'
 
+import React, { Component } from 'react';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
+class DishDetail extends Component {
+    constructor(props) { super(props); }
 
-class  DishDetail  extends  Component{
+    render() {
+        const comments = this.props.dish.comments.map((comment) => {
+            return (
+                <div className="col-12 col-md-5 m-1">
+                    <Card key={comment.id}                            >
+                        <CardBody>
+                            <CardText>{comment.comment}</CardText>
+                        </CardBody>
+                    </Card>
+                </div>
+            );
+        });
 
-constructor(){
-super()
-this.state = {
-   
-    DishDetail: 'This is  the List of the ingerdient that made of the Dishes'
-
-}
-
-}
- 
-render(){
-
-return(
-<div>
-
-<h1> {this.state.DishDetail}</h1>
-<ol>
-<h4>Donut is made from wheat & honey</h4>
-
-<h4> Pizza is made from wheat</h4>
-<h4>CheeseCake is made from butter</h4>
-<h4>Injera is made from teff</h4>
- 
- </ol>
-  </div>
-
-// DishDetail {this.props.name} List the kind of food you are looking for from the menu { this.props.heroName}
-    
-)
-
-     /*   if(DishDetail=null){
-
-            return <div></div>
-        }
-*/
+        const menu = "const menu ashwin";
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <Card>
+                            <CardBody>
+                                <CardText>{this.props.dish.description}</CardText>
+                            </CardBody>
+                        </Card>
+                    </div>
+                    <div className="col-sm">
+                        {comments}
+                    </div>
+                </div>
+            </div>
+        );
     }
 }
 
-export  default DishDetail
+export default DishDetail;

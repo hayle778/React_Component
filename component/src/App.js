@@ -36,20 +36,7 @@ render() {
         <view style = {Styles. container}>
 <Image 
 style ={{width:150, height:150}}
-
-
-// check the image source
-
-source = {require{'BigCo Inc. logo'}}
-
-
-
-
-    </view>
-    
-    
-      
-      
+  
       </header>
    
     </div>
